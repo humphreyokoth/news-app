@@ -46,6 +46,28 @@ console.log(response.data);
 
      
     </div>
+    <div className=" w-100 min-vh-100 bg-light">
+      <div className="container text-center pt-3 pb-3">
+        <h1>Quick News</h1>
+        <p>News in shorts</p>
+      </div>
+      <div className="container">
+        <div className="flex flex-row">
+          {categories.map((item, index) => (
+            <button
+              className={
+                selected === item
+                  ? "btn btn-primary me-2 mb-2"
+                  : "btn btn-outline-primary me-2 mb-2"
+              }
+              key={index}
+              onClick={() => setSelected(item)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      </div>
   );
 }
 
